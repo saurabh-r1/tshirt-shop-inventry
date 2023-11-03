@@ -1,10 +1,22 @@
+import React, { useState } from 'react';
+import TshirtForm from './components/TshirtForm';
+import TshirtDetail from './components/TshirtDetail';
 
-function App() {
+const App = () => {
+  const [tshirtData, setTshirtData] = useState([]);
+  const [isTshirtAdded, setIsTshirtAdded] = useState(false);
+
+  const addTshirt = (newTshirt) => {
+    setTshirtData([...tshirtData, newTshirt]);
+    setIsTshirtAdded(true);
+  };
+
   return (
-    <div className="App">
-      <p>Hello saurabh</p>
+    <div>
+      <TshirtForm addTshirt={addTshirt} />
+      <TshirtDetail tshirtData={tshirtData} isTshirtAdded={isTshirtAdded} />
     </div>
   );
-}
+};
 
 export default App;
