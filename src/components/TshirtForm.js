@@ -5,10 +5,10 @@ const TshirtForm = ({ addTshirt }) => {
   const [formData, setFormData] = useState({
     tshirtName: '',
     description: '',
-    price: '',          // Change this to an empty string
-    smallQuantity: '',  // Change this to an empty string
-    mediumQuantity: '', // Change this to an empty string
-    largeQuantity: '',  // Change this to an empty string
+    price: '',          
+    smallQuantity: '',  
+    mediumQuantity: '', 
+    largeQuantity: '',  
   });
 
   const handleAddProduct = () => {
@@ -24,13 +24,13 @@ const TshirtForm = ({ addTshirt }) => {
       setFormData({
         tshirtName: '',
         description: '',
-        price: '',          // Change this to an empty string
-        smallQuantity: '',  // Change this to an empty string
-        mediumQuantity: '', // Change this to an empty string
-        largeQuantity: '',  // Change this to an empty string
+        price: '',          
+        smallQuantity: '',  
+        mediumQuantity: '', 
+        largeQuantity: '',  
       });
     } else {
-      // You can add validation or error handling here if any fields are missing or invalid
+
       alert('Please fill in all required fields.');
     }
   };
@@ -65,7 +65,9 @@ const TshirtForm = ({ addTshirt }) => {
                 <Form.Control
                   type="number"
                   name="price"
-                  placeholder="0" // Use placeholder attribute
+                  min={0}
+                  placeholder="0" 
+                  
                   value={formData.price}
                   onChange={(e) => setFormData({ ...formData, price: e.target.value })}
                 />
@@ -82,7 +84,8 @@ const TshirtForm = ({ addTshirt }) => {
                         <Form.Control
                           type="number"
                           name="smallQuantity"
-                          placeholder="0" // Use placeholder attribute
+                          min={0}
+                          placeholder="0" 
                           value={formData.smallQuantity}
                           onChange={(e) => setFormData({ ...formData, smallQuantity: e.target.value })}
                         />
@@ -98,7 +101,8 @@ const TshirtForm = ({ addTshirt }) => {
                         <Form.Control
                           type="number"
                           name="mediumQuantity"
-                          placeholder="0" // Use placeholder attribute
+                          min={0}
+                          placeholder="0" 
                           value={formData.mediumQuantity}
                           onChange={(e) => setFormData({ ...formData, mediumQuantity: e.target.value })}
                         />
@@ -114,7 +118,8 @@ const TshirtForm = ({ addTshirt }) => {
                         <Form.Control
                           type="number"
                           name="largeQuantity"
-                          placeholder="0" // Use placeholder attribute
+                          min={0}
+                          placeholder="0"
                           value={formData.largeQuantity}
                           onChange={(e) => setFormData({ ...formData, largeQuantity: e.target.value })}
                         />
